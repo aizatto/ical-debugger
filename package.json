@@ -1,5 +1,6 @@
 {
   "name": "ical-debugger",
+  "homepage": "https://aizatto.github.io/ical-debugger/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,10 +8,18 @@
     "@types/node": "12.11.2",
     "@types/react": "16.9.9",
     "@types/react-dom": "16.9.2",
+    "@types/reactstrap": "^8.0.5",
+    "@types/uuid": "^3.4.5",
+    "date-fns": "^2.5.1",
+    "gh-pages": "^2.1.1",
+    "ical-date-parser": "^4.0.0",
+    "ical2json": "^2.0.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0",
-    "typescript": "3.6.4"
+    "reactstrap": "^8.1.1",
+    "typescript": "3.6.4",
+    "uuid": "^3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
