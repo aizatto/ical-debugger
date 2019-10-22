@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ical-debugger/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/ical-debugger/static/js/main.84443701.chunk.js",
-    "main.js.map": "/ical-debugger/static/js/main.84443701.chunk.js.map",
+    "main.js": "/ical-debugger/static/js/main.d5cac4c6.chunk.js",
+    "main.js.map": "/ical-debugger/static/js/main.d5cac4c6.chunk.js.map",
     "runtime-main.js": "/ical-debugger/static/js/runtime-main.e738d6b7.js",
     "runtime-main.js.map": "/ical-debugger/static/js/runtime-main.e738d6b7.js.map",
     "static/js/2.17fe1cd4.chunk.js": "/ical-debugger/static/js/2.17fe1cd4.chunk.js",
     "static/js/2.17fe1cd4.chunk.js.map": "/ical-debugger/static/js/2.17fe1cd4.chunk.js.map",
     "index.html": "/ical-debugger/index.html",
-    "precache-manifest.4ee995fcbdf89b63ae0002566b04705e.js": "/ical-debugger/precache-manifest.4ee995fcbdf89b63ae0002566b04705e.js",
+    "precache-manifest.3518d32d42a59e09d5468dd77372ae2e.js": "/ical-debugger/precache-manifest.3518d32d42a59e09d5468dd77372ae2e.js",
     "service-worker.js": "/ical-debugger/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/ical-debugger/static/css/main.5ecd60fb.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.e738d6b7.js",
     "static/js/2.17fe1cd4.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.84443701.chunk.js"
+    "static/js/main.d5cac4c6.chunk.js"
   ]
 }
