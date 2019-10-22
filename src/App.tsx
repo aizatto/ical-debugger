@@ -31,8 +31,8 @@ interface VEVENT {
   UID: string,
 }
 
-function getCalendarInSessionStorage(): Calendar[] {
-  const json = sessionStorage.getItem('calendars');
+function getCalendarInLocalStorage(): Calendar[] {
+  const json = localStorage.getItem('calendars');
   if (!json) {
     throw new Error(`Does not exist`);
   }
@@ -68,7 +68,7 @@ async function fetchCalendars(calendars: Calendar[], setData: (newData: iCalData
 const App: React.FC = () => {
   const [calendars, setCalendars] = useState<Calendar[]>(() => {
     try {
-      return getCalendarInSessionStorage()
+      return getCalendarInLocalStorage()
         .filter(calendar => calendar !== null);
     } catch (_error) {
       // console.error(_error);
@@ -86,9 +86,9 @@ const App: React.FC = () => {
   const [start, setStart] = useState(dateFns.startOfDay(new Date()));
   const [end, setEnd] = useState(dateFns.endOfDay(dateFns.addDays(start, END)));
 
-  function setCalendarsInSessionStorage(calendars: Calendar[]): void {
+  function setCalendarsInLocalStorage(calendars: Calendar[]): void {
     const json = JSON.stringify(calendars);
-    sessionStorage.setItem('calendars', json);
+    localStorage.setItem('calendars', json);
     setCalendars(calendars);
   }
 
@@ -108,7 +108,7 @@ const App: React.FC = () => {
         newCalendars[index].url = e.target.value;
       }
       // setCalendars(newCalendars);
-      setCalendarsInSessionStorage(newCalendars);
+      setCalendarsInLocalStorage(newCalendars);
     };
 
     if (!lastRow) {
@@ -116,7 +116,7 @@ const App: React.FC = () => {
         const newCalendars = calendars.slice(0);
         delete newCalendars[index];
         // setCalendars(newCalendars);
-        setCalendarsInSessionStorage(newCalendars);
+        setCalendarsInLocalStorage(newCalendars);
       };
 
       deleteElement = <span onClick={onClickToDelete}>Delete</span>;
@@ -131,7 +131,7 @@ const App: React.FC = () => {
             onChange={(e) => {
               const newCalendars = calendars.slice(0);
               newCalendars[index].enabled = e.target.checked;
-              setCalendarsInSessionStorage(newCalendars);
+              setCalendarsInLocalStorage(newCalendars);
             }}
           />
         </td>
