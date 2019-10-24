@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ical-debugger/precache-manifest.3518d32d42a59e09d5468dd77372ae2e.js"
+  "/ical-debugger/precache-manifest.9957cac890e0766374f3bb4d373ec1ae.js"
 );
 
 self.addEventListener('message', (event) => {
