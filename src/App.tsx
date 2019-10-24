@@ -218,7 +218,7 @@ const App: React.FC = () => {
       alarms = alarms ? <div>Alarms:<ol>{alarms}</ol></div> : null;
 
       return (
-        <Card key={`${format}:${vevent.UID}`}>
+        <Card key={`${format}:${vevent.UID}`} className="mb-1">
           <CardBody>
             <CardTitle>
               {vevent.SUMMARY}
@@ -236,7 +236,7 @@ const App: React.FC = () => {
 
     cols.push(
       <Col key={format}>
-        <div>{format}</div>
+        <div>{format} {dateFns.format(day, 'iiii')}</div>
         {events}
       </Col>
     );
