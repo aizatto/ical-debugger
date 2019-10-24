@@ -29,6 +29,11 @@ interface VEVENT {
   SEQUENCE: string,
   SUMMARY: string,
   UID: string,
+  VALARM: {
+    ACTION: string,
+    DESCRIPTION: string,
+    "TRIGGER;VALUE=DATE-TIME": string,
+  }[] | null,
 }
 
 function getCalendarInLocalStorage(): Calendar[] {
@@ -196,6 +201,21 @@ const App: React.FC = () => {
     const events = vevents.map((vevent) => {
       const start = iCalDateParser(vevent.DTSTART);
       const end = iCalDateParser(vevent.DTEND);
+      const description = vevent.DESCRIPTION ? <p>{vevent.DESCRIPTION}</p> : null;
+
+      let alarms: React.ReactNode = (vevent['VALARM'] ? vevent['VALARM'] : []).map((alarm, index) => {
+        return (
+          <li key={`${vevent.UID}:alarm:${index}`}>
+            action: {alarm.ACTION}
+            <p>
+              {alarm.DESCRIPTION}
+            </p>
+            Trigger: {alarm['TRIGGER;VALUE=DATE-TIME']}
+          </li>
+        )
+      });
+
+      alarms = alarms ? <div>Alarms:<ol>{alarms}</ol></div> : null;
 
       return (
         <Card key={`${format}:${vevent.UID}`}>
@@ -207,6 +227,8 @@ const App: React.FC = () => {
               {dateFns.format(start, 'HH:mm')} -
               {dateFns.format(end, 'HH:mm')}
             </CardSubtitle>
+            {description}
+            {alarms}
           </CardBody>
         </Card>
       )
